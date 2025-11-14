@@ -9,16 +9,20 @@ This project demonstrates end-to-end capability in dataset processing, model imp
 ## 1. Project Objectives
 
 ✔ Train a custom transformer model from scratch using PyTorch
+
 ✔ Perform binary sentiment classification on IMDB reviews
+
 ✔ Achieve over 75% test accuracy
+
 ✔ Generate a complete project report with visual results
+
 ✔ Demonstrate mastery of attention mechanisms, embeddings, and transformer architecture
 
 ----
 
 ## 2. Technical Approach
 
-Dataset
+**Dataset**
 
 - IMDB Reviews — 50,000 samples
 
@@ -26,7 +30,7 @@ Dataset
 
 - Train / Validation / Test split
 
-Preprocessing
+**Preprocessing**
 
 - Tokenization with HuggingFace tokenizer
 
@@ -36,7 +40,7 @@ Preprocessing
 
 - Custom PyTorch Dataset + DataLoader
 
-Model Architecture
+**Model Architecture**
 
 A compact transformer classifier built entirely from scratch:
 
@@ -54,7 +58,7 @@ A compact transformer classifier built entirely from scratch:
 
 The model converged in 3 epochs, showing stable and consistent learning.
 
-Training Setup
+**Training Setup**
 
 - Loss: CrossEntropyLoss
 
@@ -184,6 +188,8 @@ To push the model beyond 90% accuracy:
 
 ## 6. Repository Structure
 
+```bash
+
 SentimentScope/
 │
 ├── data/                  # Dataset (preprocessed)
@@ -192,7 +198,7 @@ SentimentScope/
 ├── outputs/               # Confusion matrix, ROC curve, probability plots
 ├── executive.md           # Executive summary (this file)
 └── README.md              # Setup & run instructions
-
+```
 ----
 
 ## 7. Conclusion
@@ -200,8 +206,11 @@ SentimentScope/
 SentimentScope successfully meets all project requirements:
 
 ✔ 76.92% test accuracy
+
 ✔ Complete evaluation and probability analysis
+
 ✔ Strong model calibration
+
 ✔ Transformer trained from scratch using solid engineering practices
 
 This system strengthens Cinescope’s ability to analyze user feedback and power smarter, more personalized recommendations.
