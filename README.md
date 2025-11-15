@@ -1,5 +1,5 @@
 # 📘 Sentiment Analysis with a Custom Transformer
-IMDB Movie Reviews — PyTorch Implementation
+IMDB Movie Reviews, PyTorch Implementation
 
 ## 📝 Executive Summary
 
@@ -273,6 +273,10 @@ The notebook will also save a model checkpoint automatically.
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange)
 ![Colab](https://img.shields.io/badge/Google%20Colab-Notebook-yellow)
 ![Dataset](https://img.shields.io/badge/Data-IMDb%20Large%20Movie%20Review%20Dataset-red)
+
+![Certification Badge 4 (1)](https://github.com/user-attachments/assets/52d67d19-f90e-4535-89fa-a032c2c89394)
+
+<img width="700" height="531" alt="Screenshot 2025-11-15 233315 (1)" src="https://github.com/user-attachments/assets/b41cf0ef-5b58-46af-8130-e76ef35b3b99" />
 
 ----
 
