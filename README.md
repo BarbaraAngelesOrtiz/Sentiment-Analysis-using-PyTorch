@@ -272,6 +272,7 @@ The notebook will also save a model checkpoint automatically.
 
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange)
 ![Colab](https://img.shields.io/badge/Google%20Colab-Notebook-yellow)
+![Dataset](https://img.shields.io/badge/Data-IMDb%20Large%20Movie%20Review%20Dataset-red)
 
 ----
 
