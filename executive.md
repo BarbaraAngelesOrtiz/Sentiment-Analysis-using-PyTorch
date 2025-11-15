@@ -1,6 +1,6 @@
 # Executive Summary – SentimentScope: Transformer-Based Sentiment Analysis for Cinescope
 
-As a Machine Learning Engineer, I developed a transformer-based sentiment analysis system trained from scratch using the IMDB movie reviews dataset. This model supports Cinescope’s recommendation engine by identifying sentiment in user reviews, enabling more personalized content experiences and improved audience understanding.
+As a Machine Learning Engineer, I developed a transformer-based sentiment analysis system trained using the IMDB movie reviews dataset. This model supports Cinescope’s recommendation engine by identifying sentiment in user reviews, enabling more personalized content experiences and improved audience understanding.
 
 This project demonstrates full-stack ML capability: data ingestion, preprocessing, custom transformer implementation, model training, evaluation, interpretability analysis, probability diagnostics, and reporting.
 
@@ -8,7 +8,7 @@ This project demonstrates full-stack ML capability: data ingestion, preprocessin
 
 ## 1. Project Objectives
 
-✔ Train a custom transformer model from scratch using PyTorch
+✔ Train a custom transformer model using PyTorch
 
 ✔ Perform binary sentiment classification on IMDB reviews
 
@@ -44,7 +44,7 @@ This project demonstrates full-stack ML capability: data ingestion, preprocessin
 
 **Model Architecture**
 
-A compact transformer classifier built entirely from scratch:
+A compact transformer classifier built entirely:
 
 - Token + positional embeddings
 
@@ -107,7 +107,7 @@ The model shows clear convergence and stable improvement.
 
 - The model is slightly stronger at identifying positive reviews.
 - Most misclassifications fall in borderline or mixed-sentiment cases.
-- Error rates align with typical behavior of compact transformers trained from scratch.
+- Error rates align with typical behavior of compact transformers trained.
 
 ### 3.4 Probability Distribution Analysis 
 
@@ -173,22 +173,7 @@ To push the model beyond 90% accuracy:
 
 ----
 
-## 6. Repository Structure
-
-```bash
-
-SentimentScope/
-│
-├── data/                  # Dataset (preprocessed)
-├── src/                   # Transformer model, training/inference scripts
-├── notebooks/             # Full training and evaluation notebook
-├── outputs/               # Confusion matrix, ROC curve, probability plots
-├── executive.md           # Executive summary (this file)
-└── README.md              # Setup & run instructions
-```
-----
-
-## 7. Conclusion
+## 6. Conclusion
 
 SentimentScope successfully meets all project requirements:
 
