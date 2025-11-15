@@ -96,6 +96,8 @@ The model shows clear convergence and stable improvement.
 
 ✔ Strong AUC (0.85) indicates excellent class separability
 
+<img width="613" height="624" alt="ROC Curve" src="https://github.com/user-attachments/assets/bf3978be-67de-41bb-ba83-4d1e3af8fa28" />
+
 ### 3.3 Confusion Matrix
 
 |                   | Predicted Negative | Predicted Positive |
@@ -111,6 +113,8 @@ The model shows clear convergence and stable improvement.
 
 Two complementary probability analyses were performed.
 
+<img width="704" height="470" alt="Probability Distribution" src="https://github.com/user-attachments/assets/08ea9d6f-5399-4fc0-8190-356f548d5cd2" />
+
 #### 1. Class-Separated Probability Histogram
 
 Key insights:
@@ -121,6 +125,8 @@ Key insights:
 - Misclassifications occur mostly in this overlapping band.
 
 This indicates strong calibration at the extremes and uncertainty only in truly ambiguous samples.
+
+<img width="704" height="470" alt="Compare Probability Distributions" src="https://github.com/user-attachments/assets/020939bc-a416-476c-9b02-68c5e04be2f4" />
 
 #### 2. Global Probability Distribution (U-shaped curve)
 
