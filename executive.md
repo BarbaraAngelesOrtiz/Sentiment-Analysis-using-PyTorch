@@ -71,7 +71,15 @@ The model converged in 3 epochs, showing stable and consistent learning.
 - Batch Size: 32
 
 - Device: CPU
-  
+
+<img width="861" height="470" alt="Review Length by Sentiment (Characters)" src="https://github.com/user-attachments/assets/f0cf5bad-eee8-481a-9201-40362904e8f7" />
+
+<img width="859" height="470" alt="Review Length by Sentiment (Words)" src="https://github.com/user-attachments/assets/00d362bc-ba27-45ff-bc86-bd086fde4c1c" />
+
+<img width="861" height="470" alt="Review Length Distribution (Characters)" src="https://github.com/user-attachments/assets/0d52ab0c-d518-41dd-b11b-4f57ec88f4b3" />
+
+<img width="859" height="470" alt="Review Length Distribution (Words)" src="https://github.com/user-attachments/assets/69145d00-ded0-4d16-bffa-c8885d97aab7" />
+
 ----
 
 ## 3. Results
