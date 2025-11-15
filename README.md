@@ -273,5 +273,11 @@ The notebook will also save a model checkpoint automatically.
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange)
 ![Colab](https://img.shields.io/badge/Google%20Colab-Notebook-yellow)
 
+----
 
+## Acknowledgments
+
+<img width="205" height="205" alt="aws-logo-icon (1)" src="https://github.com/user-attachments/assets/96be7e16-e0db-43c8-bdc4-83569ce3eb1c" />
+
+<img width="205" height="205" alt="images (2)" src="https://github.com/user-attachments/assets/7084389d-848e-4802-a85a-4763cef95d0c" />
 
