@@ -12,7 +12,7 @@ This project demonstrates full-stack ML capability: data ingestion, preprocessin
 
 ✔ Perform binary sentiment classification on IMDB reviews
 
-✔ Achieve over 75% test accuracy
+✔ Achieve over 76.33% test accuracy
 
 ✔ Generate a complete project report with visual results
 
@@ -77,69 +77,31 @@ The model converged in 3 epochs, showing stable and consistent learning.
 ## 3. Results
 ### 3.1 Training & Validation Performance
 
-First Model
-
 | Epoch | Validation Accuracy |
 | ----- | ------------------- |
-| 1     | 68.88%              |
-| 2     | 76.28%              |
-| 3     | 78.36%              |
-
-Second Model
-
-| Epoch | Train Loss | Val Accuracy |
-| ----- | ---------- | ------------ |
-| 1     | 0.5440     | 0.7798       |
-| 2     | 0.4176     | 0.7966       |
-| 3     | 0.3523     | 0.8002       |
-
+| 1     | 70.40%              |
+| 2     | 75.88%              |
+| 3     | 79.36%              |
 
 The model shows clear convergence and stable improvement.
 
 ###  3.2 Final Test Performance
 
-First Model
-
 | Metric            | Value      |
 | ----------------- | ---------- |
-| **Test Accuracy** | **76.92%** |
-| **AUC (ROC)**     | **0.854**  |
-| **F1 Score**      | **0.77**   |
-| **Precision**     | **0.78**   |
-| **Recall**        | **0.76**   |
-
-Second Model 
-
-| Metric            | Value      |
-| ----------------- | ---------- |
-| **Test Accuracy** | **0.8002** |
-| **AUC (ROC)**     | **0.88**   |
-| **Precision**     | **0.81**   |
-| **Recall**        | **0.78**   |
-| **F1 Score**      | **0.79**   |
-
+| **Test Accuracy** | **76.33%** |
+| **AUC (ROC)**     | **0.847**  |
 
 ✔ Exceeds requirement: >75% accuracy
 
-✔ Strong AUC (0.88) indicates excellent class separability
+✔ Strong AUC (0.85) indicates excellent class separability
 
 ### 3.3 Confusion Matrix
 
-First Model
-
 |                   | Predicted Negative | Predicted Positive |
 | ----------------- | ------------------ | ------------------ |
-| **True Negative** | 9838               | 2662               |
-| **True Positive** | 3108               | 9392               |
-
-The model performs reasonably well on both classes, with most errors coming from ambiguous or borderline reviews.
-
-Second Model
-
-|                   | Predicted Negative | Predicted Positive |
-| ----------------- | ------------------ | ------------------ |
-| **True Negative** | 9476               | 3024               |
-| **True Positive** | 1971               | 10529              |
+| **True Negative** | 8837               | 3663               |
+| **True Positive** | 2255               | 10245              |
 
 - The model is slightly stronger at identifying positive reviews.
 - Most misclassifications fall in borderline or mixed-sentiment cases.
@@ -154,11 +116,8 @@ Two complementary probability analyses were performed.
 Key insights:
 
 - Negative reviews cluster near 0.0–0.1 → high confidence for negative sentiment.
-
 - Positive reviews cluster near 0.9–1.0 → high confidence for positive sentiment.
-
 - Overlap appears in the 0.4–0.6 region → where mixed-tone, ironic, or neutral reviews reside.
-
 - Misclassifications occur mostly in this overlapping band.
 
 This indicates strong calibration at the extremes and uncertainty only in truly ambiguous samples.
@@ -166,17 +125,13 @@ This indicates strong calibration at the extremes and uncertainty only in truly 
 #### 2. Global Probability Distribution (U-shaped curve)
 
 - Sharp peaks at 0.0 and 1.0.
-
 - Very few samples around 0.5.
-
 - Confirms that the model avoids uncertain predictions and is confident when the sentiment signal is strong.
 
 Combined, both analyses show:
 
 - Robust polarity detection
-
 - Clear confidence patterns
-
 - Good interpretability and model calibration
 
 ----
@@ -184,16 +139,14 @@ Combined, both analyses show:
 ## 4. Key Takeaways
 ### 1. Transformer from Scratch = Effective
 
-Even without pretraining, a compact transformer can reach 76–80% accuracy, demonstrating that attention mechanisms capture sentiment cues well.
+Even without pretraining, a compact transformer can reach 76–78% accuracy, demonstrating that attention mechanisms capture sentiment cues well.
 
 ### 2. Probability Distributions Reveal Strong Decisiveness
 
 The U-shaped distribution and class-separated histograms show:
 
 - High confidence in clear cases
-
 - Ambiguity only in mixed-sentiment reviews
-
 - Good alignment between predicted confidence and human interpretability
 
 ### 3. Complex Sentiment Requires Larger Models
@@ -207,13 +160,9 @@ Sarcasm, mixed emotions, and subtle negativity are best handled by pretrained mo
 To push the model beyond 90% accuracy:
 
 - Fine-tune a pretrained transformer (DistilBERT, BERT-base, RoBERTa)
-
 - Increase depth (more transformer blocks)
-
 - Use longer input sequences (256–512 tokens)
-
 - Add interpretability tools (attention maps, SHAP values)
-
 - Deploy an inference API using FastAPI
 
 ----
@@ -237,9 +186,9 @@ SentimentScope/
 
 SentimentScope successfully meets all project requirements:
 
-✔ 80% test accuracy
+✔ 76.33% test accuracy
 
-✔ Strong AUC of 0.88
+✔ Strong AUC of 0.847
 
 ✔ High-confidence probability behavior
 
@@ -247,4 +196,4 @@ SentimentScope successfully meets all project requirements:
 
 ✔ Meaningful insights for recommendation systems
 
-This system strengthens Cinescope’s ability to analyze user feedback and power smarter, more personalized recommendations.
+
