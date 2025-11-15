@@ -149,6 +149,11 @@ From raw dataset → preprocessing → training → evaluation → visualization
 │     ├── Probability Distribution.png
 │     ├── probability_histogram.png
 │     ├── Confusion matrix.png
+│     ├── Label Distribution in Training Set.png
+│     ├── Review Length by Sentiment (Characters).png
+│     ├── Review Length by Sentiment (Words).png
+│     ├── Review Length Distribution (Characters).png
+│     ├── Review Length Distribution (Words).png
 │     └── ROC Curve.png
 │ 
 ├── README.md                                     # Project overview
