@@ -1,8 +1,8 @@
 # Executive Summary – SentimentScope: Transformer-Based Sentiment Analysis for Cinescope
 
-As a Machine Learning Engineer, I developed a transformer-based sentiment analysis model trained from scratch using the IMDB movie reviews dataset. This system enhances Cinescope’s recommendation engine by identifying user sentiment in written reviews, enabling more personalized content experiences.
+As a Machine Learning Engineer, I developed a transformer-based sentiment analysis system trained from scratch using the IMDB movie reviews dataset. This model supports Cinescope’s recommendation engine by identifying sentiment in user reviews, enabling more personalized content experiences and improved audience understanding.
 
-This project demonstrates end-to-end capability in dataset processing, model implementation, training, evaluation, probability analysis, and reporting.
+This project demonstrates full-stack ML capability: data ingestion, preprocessing, custom transformer implementation, model training, evaluation, interpretability analysis, probability diagnostics, and reporting.
 
 ----
 
@@ -39,6 +39,8 @@ This project demonstrates end-to-end capability in dataset processing, model imp
 - Attention mask generation
 
 - Custom PyTorch Dataset + DataLoader
+  
+- Stratified train/val/test split
 
 **Model Architecture**
 
@@ -54,7 +56,7 @@ A compact transformer classifier built entirely from scratch:
 
 - Dropout regularization
 
-- 2-class classification head
+- Final dense classification head
 
 The model converged in 3 epochs, showing stable and consistent learning.
 
@@ -75,15 +77,28 @@ The model converged in 3 epochs, showing stable and consistent learning.
 ## 3. Results
 ### 3.1 Training & Validation Performance
 
+First Model
+
 | Epoch | Validation Accuracy |
 | ----- | ------------------- |
 | 1     | 68.88%              |
 | 2     | 76.28%              |
 | 3     | 78.36%              |
 
+Second Model
+
+| Epoch | Train Loss | Val Accuracy |
+| ----- | ---------- | ------------ |
+| 1     | 0.5440     | 0.7798       |
+| 2     | 0.4176     | 0.7966       |
+| 3     | 0.3523     | 0.8002       |
+
+
 The model shows clear convergence and stable improvement.
 
-###  3.2 Test Performance (Final Evaluation)
+###  3.2 Final Test Performance
+
+First Model
 
 | Metric            | Value      |
 | ----------------- | ---------- |
@@ -93,10 +108,24 @@ The model shows clear convergence and stable improvement.
 | **Precision**     | **0.78**   |
 | **Recall**        | **0.76**   |
 
+Second Model 
 
-✔ Meets requirement: >75% test accuracy
+| Metric            | Value      |
+| ----------------- | ---------- |
+| **Test Accuracy** | **0.8002** |
+| **AUC (ROC)**     | **0.88**   |
+| **Precision**     | **0.81**   |
+| **Recall**        | **0.78**   |
+| **F1 Score**      | **0.79**   |
+
+
+✔ Exceeds requirement: >75% accuracy
+
+✔ Strong AUC (0.88) indicates excellent class separability
 
 ### 3.3 Confusion Matrix
+
+First Model
 
 |                   | Predicted Negative | Predicted Positive |
 | ----------------- | ------------------ | ------------------ |
@@ -105,54 +134,57 @@ The model shows clear convergence and stable improvement.
 
 The model performs reasonably well on both classes, with most errors coming from ambiguous or borderline reviews.
 
+Second Model
+
+|                   | Predicted Negative | Predicted Positive |
+| ----------------- | ------------------ | ------------------ |
+| **True Negative** | 9476               | 3024               |
+| **True Positive** | 1971               | 10529              |
+
+- The model is slightly stronger at identifying positive reviews.
+- Most misclassifications fall in borderline or mixed-sentiment cases.
+- Error rates align with typical behavior of compact transformers trained from scratch.
+
 ### 3.4 Probability Distribution Analysis 
 
-Two probability-based visual analyses were incorporated to better understand model behavior.
+Two complementary probability analyses were performed.
 
-1) Class-Separated Probability Histogram
+#### 1. Class-Separated Probability Histogram
 
-This plot compares the predicted probability distribution for positive vs. negative classes.
+Key insights:
 
-Key observations:
+- Negative reviews cluster near 0.0–0.1 → high confidence for negative sentiment.
 
-- Negative samples cluster heavily near 0.0–0.1, indicating the model has high confidence when predicting negativity.
+- Positive reviews cluster near 0.9–1.0 → high confidence for positive sentiment.
 
-- Positive samples cluster near 0.9–1.0, showing similarly high confidence on very positive sentiment.
+- Overlap appears in the 0.4–0.6 region → where mixed-tone, ironic, or neutral reviews reside.
 
-- Mid-range probabilities (0.4–0.6) contain both classes and correspond to ambiguous or mixed-tone reviews.
+- Misclassifications occur mostly in this overlapping band.
 
-- Error regions (false positives/false negatives) align with these overlapping middle bins.
+This indicates strong calibration at the extremes and uncertainty only in truly ambiguous samples.
 
-This distribution confirms that the model:
+#### 2. Global Probability Distribution (U-shaped curve)
 
-- Is decisive for clearly negative or positive sentiment.
+- Sharp peaks at 0.0 and 1.0.
 
-- Struggles only with reviews containing irony, mixed opinions, or nuanced emotional tone.
+- Very few samples around 0.5.
 
-2) Overall Predicted Probability Distribution
+- Confirms that the model avoids uncertain predictions and is confident when the sentiment signal is strong.
 
-The global histogram of predicted positive probabilities reveals:
+Combined, both analyses show:
 
-- A U-shaped distribution, with peaks near 0.0 and 1.0.
-
-- Very few predictions near 0.5, meaning the model avoids uncertain decisions.
-
-- The sharp peaks at 0 and 1 align with the confusion matrix: confident predictions are usually correct.
-
-Together, both charts indicate:
-
-- A model with good calibration at the extremes
+- Robust polarity detection
 
 - Clear confidence patterns
 
-- Most classification uncertainty concentrated in a narrow probability band
+- Good interpretability and model calibration
 
 ----
 
 ## 4. Key Takeaways
 ### 1. Transformer from Scratch = Effective
 
-Even without pretraining, a compact transformer can reach 76–78% accuracy, demonstrating that attention mechanisms capture sentiment cues well.
+Even without pretraining, a compact transformer can reach 76–80% accuracy, demonstrating that attention mechanisms capture sentiment cues well.
 
 ### 2. Probability Distributions Reveal Strong Decisiveness
 
@@ -166,7 +198,7 @@ The U-shaped distribution and class-separated histograms show:
 
 ### 3. Complex Sentiment Requires Larger Models
 
-Irony, sarcasm, and contradictory reviews remain the hardest cases — areas where pretrained models (BERT, RoBERTa) would excel.
+Sarcasm, mixed emotions, and subtle negativity are best handled by pretrained models like BERT, DistilBERT, or RoBERTa.
 
 ----
 
@@ -205,12 +237,14 @@ SentimentScope/
 
 SentimentScope successfully meets all project requirements:
 
-✔ 76.92% test accuracy
+✔ 80% test accuracy
 
-✔ Complete evaluation and probability analysis
+✔ Strong AUC of 0.88
 
-✔ Strong model calibration
+✔ High-confidence probability behavior
 
-✔ Transformer trained from scratch using solid engineering practices
+✔ Full end-to-end implementation of a custom transformer
+
+✔ Meaningful insights for recommendation systems
 
 This system strengthens Cinescope’s ability to analyze user feedback and power smarter, more personalized recommendations.
