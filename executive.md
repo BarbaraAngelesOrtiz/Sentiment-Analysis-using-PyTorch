@@ -1,6 +1,6 @@
 # Executive Summary – SentimentScope: Transformer-Based Sentiment Analysis for Cinescope
 
-As a Machine Learning Engineer, I developed a transformer-based sentiment analysis system trained using the IMDB movie reviews dataset. This model supports Cinescope’s recommendation engine by identifying sentiment in user reviews, enabling more personalized content experiences and improved audience understanding.
+As a Machine Learning Engineer, I developed a transformer-based sentiment analysis system trained using the IMDB movie reviews dataset from scratch. This model supports Cinescope’s recommendation engine by identifying sentiment in user reviews, enabling more personalized content experiences and improved audience understanding.
 
 This project demonstrates full-stack ML capability: data ingestion, preprocessing, custom transformer implementation, model training, evaluation, interpretability analysis, probability diagnostics, and reporting.
 
